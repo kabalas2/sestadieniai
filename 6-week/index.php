@@ -8,7 +8,7 @@
 <body>
 <div class="table">
     <div class="cup-wrapper">
-        <form action="" method="post">
+        <form action="/maker.php" method="post">
             <select name="drink">
                 <option>Gerimas</option>
                 <option value="coffe">Kava</option>
