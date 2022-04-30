@@ -3,7 +3,7 @@
 ?>
 <html>
 <head>
-    <link type="text/css" rel="stylesheet" href="css/style.css">
+    <link type="text/css" rel="stylesheet" href="/css/style.css">
 </head>
 <body>
 <div class="table">
@@ -11,7 +11,7 @@
         <form action="/maker.php" method="post">
             <select name="drink">
                 <option>Gerimas</option>
-                <option value="coffe">Kava</option>
+                <option value="coffee">Kava</option>
                 <option value="tea">Arbata</option>
                 <option value="milkshake">Pieno Kokteilis</option>
             </select><br>

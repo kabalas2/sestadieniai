@@ -14,6 +14,14 @@ class Coffee extends HotDrinks
 
     private $sprimles;
 
+    public function __construct($data)
+    {
+        parent::__construct();
+        $this->setCup($data['size']);
+        $this->setMilk($data['milk']);
+        $this->setSugar($data['sugar']);
+    }
+
     public function setBeans($beans)
     {
         $this->beans = $beans;
@@ -29,11 +37,13 @@ class Coffee extends HotDrinks
         $this->syrup = $syrup;
     }
 
-    public function setMarshMelow($marshmelow){
+    public function setMarshMelow($marshmelow)
+    {
         $this->marshmallouw = $marshmelow;
     }
 
-    public function setSprimles($sprimles){
+    public function setSprimles($sprimles)
+    {
         $this->sprimles = $sprimles;
     }
 
@@ -41,20 +51,16 @@ class Coffee extends HotDrinks
     public function delivery()
     {
         $html = '';
-        $html .= '<div class="cup '.$this->cup.'">';
-        if($this->milk !== false){
+        $html .= '<div class="cup ' . $this->cup . '">';
+        if ($this->milk != 0) {
             $milkClass = 'milk';
-        }else{
+        } else {
             $milkClass = '';
         }
-        $html .= '<div class="top '.$milkClass.'"></div>';
+        $html .= '<div class="top ' . $milkClass . '"></div>';
         $html .= '</div>';
         return $html;
     }
-
-
-
-
 
 
 }
