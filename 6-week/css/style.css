@@ -1,0 +1,65 @@
+body{
+    background: gray;
+}
+
+.table{
+    background: brown;
+    width: 1000px;
+    height: 1000px;
+    margin: 30px auto;
+}
+
+.cup-wrapper{
+    width: 600px;
+    height: 800px;
+    margin: 100px auto;
+    border: solid 1px #000;
+}
+
+.cup{
+    width: 300px;
+    height: 500px;
+    background: blanchedalmond;
+    -webkit-box-shadow: 5px 5px 15px 5px #000000;
+    box-shadow: 5px 5px 15px 5px #000000;
+    position: relative;
+    margin: 50px auto;
+}
+.cup.l{
+    width: 320px;
+    height: 550px;
+}
+.cup.xl{
+    width: 350px;
+    height: 600px;
+}
+.top{
+    width: 100%;
+    height: 100px;
+    background: #350802;
+    border-radius: 200px;
+    top: -50px;
+    left: 0;
+    position: absolute;
+    border-top: 3px solid blanchedalmond;
+}
+
+.top.milk{
+    background: #c3803b;
+}
+
+.top.black{
+    background: #350800;
+}
+
+.top.green{
+    background: #003512;
+}
+
+.top.red{
+    background: crimson;
+}
+
+.top.white {
+    background: #888888;
+}
