@@ -1,7 +1,7 @@
 <?php
 
 include_once 'HotDrinks.php';
-
+include_once 'Db.php';
 class Coffee extends HotDrinks
 {
     private $beans;
@@ -21,6 +21,19 @@ class Coffee extends HotDrinks
         $this->setMilk($data['milk']);
         $this->setSugar($data['sugar']);
         $this->setName($data['name']);
+        $this->calcPrice($data['size']);
+        $this->data = $data;
+    }
+
+
+    private function calcPrice($size){
+        if($size == 'xl'){
+            $this->setPrice(3.2);
+        }elseif('l'){
+            $this->setPrice(2.8);
+        }else{
+            $this->setPrice(2.4);
+        }
     }
 
     public function setBeans($beans)
@@ -51,6 +64,17 @@ class Coffee extends HotDrinks
 
     public function delivery()
     {
+        $db = new DB();
+        $data = json_encode($this->data);
+        $sql = "INSERT INTO sales (price, data, date) VALUES ('$this->price','$data', NOW())";
+
+//        echo $sql;
+//        die();
+        $pdo = $db->connect();
+
+        $pdo->exec($sql);
+
+
         $html = '';
         $html .= '<div class="cup ' . $this->cup . '">';
         if ($this->milk != 0) {

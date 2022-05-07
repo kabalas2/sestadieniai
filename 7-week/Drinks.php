@@ -10,6 +10,11 @@ class Drinks
 
     protected $name;
 
+    protected $price;
+
+    protected $data;
+
+
     public function setSugar($sugar)
     {
         $this->sugar = $sugar;
@@ -23,6 +28,16 @@ class Drinks
     public function setName($name)
     {
         $this->name = $name;
+    }
+
+    public function setPrice($price)
+    {
+        $this->price = $price;
+    }
+
+    public function getPrice()
+    {
+        return $this->price;
     }
 
     public function delivery()
