@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Group;
-use App\Models\Project;
+use App\Models\Student;
 use Illuminate\Http\Request;
 
-class ProjectController extends Controller
+class StudentController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +14,8 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        $data['projects'] = Project::all();
-        return view('projects.all', $data);
+        $data['students'] = Student::all();
+        return view('student.all', $data);
     }
 
     /**
@@ -26,7 +25,7 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        return view('projects.create');
+        return view('student.create');
     }
 
     /**
@@ -37,20 +36,9 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
-        $project = new Project();
-        $project->name = $request->post('name');
-        $project->groups_count = $request->post('groups_count');
-        $project->max_per_group = $request->post('max_per_group');
-        $project->save();
-
-        for($i = 1; $i <= $project->groups_count; $i++){
-            $group = new Group();
-            $group->name = 'Group #'.$i;
-            $group->project_id = $project->id;
-            $group->save();
-        }
-
-
+        $student = new Student();
+        $student->full_name = $request->post('full_name');
+        $student->save();
     }
 
     /**

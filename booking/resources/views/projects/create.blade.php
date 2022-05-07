@@ -11,6 +11,9 @@
                        <form action="{{route('projects.store')}}" method="POST">
                            @csrf
                            <input name="name" type="text" placeholder="Project Name">
+                           <input name="groups_count" type="number" placeholder="How many groups will be?">
+                           <input name="max_per_group" type="number" placeholder="Max per Group"><br>
+                           <input name="create" type="submit" value="Create">
                        </form>
                     </div>
                 </div>
