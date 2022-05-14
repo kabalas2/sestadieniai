@@ -10,7 +10,8 @@
                     </div>
 
                     <div class="card-body">
-                       <form action="" method="POST">
+                       <form action="{{route('group.place')}}" method="POST">
+                           @csrf
                            <input type="hidden" value="{{$group->id}}" name="group_id">
                            <select name="student_id">
                                 @foreach($students as $student)

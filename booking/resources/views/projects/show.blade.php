@@ -17,9 +17,14 @@
                                 </a>
                             </h2>
                                 <ul>
-                                    @foreach($group->relationships as $elemt)
+                                    @foreach($group->relationships as $element)
                                         <li>
-                                            {{$elemnt->student->full_name}}
+                                            {{$element->student->full_name}}
+                                            <form action="{{route('group.dismiss')}}" method="POST">
+                                                @csrf
+                                                <input type="hidden" value="{{$element->id}}" name="relationship_id">
+                                                <input class="btn btn-danger" type="submit" value="-">
+                                            </form>
                                         </li>
                                     @endforeach
                                 </ul>

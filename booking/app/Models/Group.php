@@ -14,4 +14,11 @@ class Group extends Model
         return $this->hasMany(Relationship::class,'group_id','id');
 
     }
+
+    public function project()
+    {
+        return $this->hasOne(Project::class, 'id','project_id');
+    }
+
+
 }

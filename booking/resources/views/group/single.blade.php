@@ -15,7 +15,7 @@
                     <div class="card-body">
                         <ul>
                         @foreach($group->relationships as $element)
-                            <li>{{$element->name}}</li>
+                            <li>{{$element->student->full_name}}</li>
                         @endforeach
                         </ul>
                     </div>

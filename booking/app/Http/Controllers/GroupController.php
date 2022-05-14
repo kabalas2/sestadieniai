@@ -37,5 +37,27 @@ class GroupController extends Controller
         return view('group.assign', $data);
     }
 
-    public function
+    public function place(Request $request)
+    {
+        $groupId = $request->post('group_id');
+        $group = Group::find($groupId);
+        $max = $group->project->max_per_group;
+        $count = Relationship::where('group_id', $group->id)->count();
+        if($count < $max){
+            $relationship = new Relationship();
+            $relationship->student_id = $request->post('student_id');
+            $relationship->group_id = $groupId;
+            $relationship->project_id = $group->project->id;
+            $relationship->save();
+        }else{
+            echo 'grupe jau pilna';
+        }
+
+    }
+
+    public function dismiss(Request $request)
+    {
+        $relationship = Relationship::find($request->post('relationship_id'));
+        $relationship->delete();
+    }
 }

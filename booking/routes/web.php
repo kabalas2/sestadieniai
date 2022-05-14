@@ -24,6 +24,8 @@ Route::resource('/projects', 'App\Http\Controllers\ProjectController');
 Route::resource('/students', 'App\Http\Controllers\StudentController');
 Route::get('/group/{id}', [App\Http\Controllers\GroupController::class, 'show'])->name('group.show');
 Route::get('/group/assign/{id}', [App\Http\Controllers\GroupController::class, 'assign'])->name('group.assign');
+Route::post('/group/assign', [App\Http\Controllers\GroupController::class, 'place'])->name('group.place');
+Route::post('/group/dismiss', [App\Http\Controllers\GroupController::class, 'dismiss'])->name('group.dismiss');
 
 
 
